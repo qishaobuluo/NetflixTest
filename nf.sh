@@ -203,22 +203,22 @@ function MediaUnlockTest_BBC() {
     fi
 }
 
-function MediaUnlockTest_Netflix() {
-    echo -n -e " Netflix:\t\t\t\t->\c";
+function MediaUnlockTest_奈飞() {
+    echo -n -e " 奈飞:\t\t\t\t->\c";
     local result=`curl -${1} --user-agent "${UA_Browser}" -sSL "https://www.netflix.com/" 2>&1`;
     if [ "$result" == "Not Available" ];then
-        echo -n -e "\r Netflix:\t\t\t\t${Font_Red}Unsupport${Font_Suffix}\n"
+        echo -n -e "\r 奈飞:\t\t\t\t${Font_Red}Unsupport${Font_Suffix}\n"
         return;
     fi
     
     if [[ "$result" == "curl"* ]];then
-        echo -n -e "\r Netflix:\t\t\t\t${Font_Red}Failed (Network Connection)${Font_Suffix}\n"
+        echo -n -e "\r 奈飞:\t\t\t\t${Font_Red}Failed (Network Connection)${Font_Suffix}\n"
         return;
     fi
     
     local result=`curl -${1} --user-agent "${UA_Browser}" -sL "https://www.netflix.com/title/80018499" 2>&1`;
     if [[ "$result" == *"page-404"* ]] || [[ "$result" == *"NSEZ-403"* ]];then
-        echo -n -e "\r Netflix:\t\t\t\t${Font_Red}No${Font_Suffix}\n"
+        echo -n -e "\r 奈飞:\t\t\t\t${Font_Red}No${Font_Suffix}\n"
         return;
     fi
     
@@ -230,7 +230,7 @@ function MediaUnlockTest_Netflix() {
     local result6=`curl -${1} --user-agent "${UA_Browser}" -sL "https://www.netflix.com/title/70202589" 2>&1`;
     
     if [[ "$result1" == *"page-404"* ]] && [[ "$result2" == *"page-404"* ]] && [[ "$result3" == *"page-404"* ]] && [[ "$result4" == *"page-404"* ]] && [[ "$result5" == *"page-404"* ]] && [[ "$result6" == *"page-404"* ]];then
-        echo -n -e "\r Netflix:\t\t\t\t${Font_Yellow}Only Homemade${Font_Suffix}\n"
+        echo -n -e "\r 奈飞:\t\t\t\t${Font_Yellow}Only Homemade${Font_Suffix}\n"
         return;
     fi
     
@@ -239,7 +239,7 @@ function MediaUnlockTest_Netflix() {
     if [[ ! -n "$region" ]];then
         region="US";
     fi
-    echo -n -e "\r Netflix:\t\t\t\t${Font_Green}Yes(Region: ${region})${Font_Suffix}\n"
+    echo -n -e "\r 奈飞:\t\t\t\t${Font_Green}Yes(Region: ${region})${Font_Suffix}\n"
     return;
 }
 
