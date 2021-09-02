@@ -294,7 +294,7 @@ function MediaUnlockTest() {
     MediaUnlockTest_BilibiliChinaMainland ${1};
     MediaUnlockTest_BilibiliHKMCTW ${1};
     MediaUnlockTest_BilibiliTW ${1};
-    MediaUnlockTest_Netflix ${1};
+    MediaUnlockTest_奈飞 ${1};
     MediaUnlockTest_YouTube_Region ${1};
     MediaUnlockTest_DisneyPlus ${1};
 }
