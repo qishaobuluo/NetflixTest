@@ -16,7 +16,7 @@ export LANG="en_US";
 export LANGUAGE="en_US";
 export LC_ALL="en_US";
 clear;
-echo -e "${Font_Red}脚本来源于互联网，所有权归作者d${Font_Suffix}";
+echo -e "${Font_Red}脚本来源于互联网，所有权归作者${Font_Suffix}";
 echo -e "${Font_Red}本工具测试结果仅供参考，请以实际使用为准${Font_Suffix}";
 echo -e "${Font_Red}值得你一看的牛逼网站  https://qsdbl.site${Font_Suffix}";
 echo -e " ** Version: v${shell_version}";
